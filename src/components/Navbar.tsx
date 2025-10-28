@@ -36,7 +36,7 @@ const Navbar = () => {
         ? "bg-black/60 backdrop-blur-xl border-b border-white/10" 
         : "bg-transparent border-b border-transparent"
     )}>
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8" style={{ fontFamily: 'var(--font-cinzel)' }}>
             <div className="flex items-center justify-between h-20">
             {/* Logo - moved more to the left */}
             <div className="flex items-center flex-shrink-0 pl-24">

@@ -28,16 +28,16 @@ const Hero = () => {
           className="space-y-8"
         >
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="text-white"> Automate </span>
-            <span className="bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">Conversations </span>
-            <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-blue-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl leading-tight" style={{ fontFamily: 'var(--font-raleway)' }}>
+            <span className="text-white" style={{ fontFamily: 'var(--font-orbitron)' }}> Automate </span>
+            <span className="bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-orbitron)' }}>Conversations </span>
+            <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-blue-300 bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-orbitron)' }}>
               That Feel Human
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'var(--font-cinzel)' }}>
             Build custom AI voice agents that speak, understand, and engage — just like real people. Scalable, multilingual, and lightning-fast. 
           </p>
 
