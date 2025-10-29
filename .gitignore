@@ -19,6 +19,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -44,12 +45,19 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# turbopack
+.turbo
+
 # IDE and Editor files
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # OS generated files
 .DS_Store
@@ -59,6 +67,7 @@ next-env.d.ts
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Runtime data
 pids
@@ -79,9 +88,6 @@ coverage/
 # Optional npm cache directory
 .npm
 
-# Optional eslint cache
-.eslintcache
-
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
@@ -101,6 +107,9 @@ coverage/
 .cache
 .parcel-cache
 
+# Next.js cache
+.next/cache
+
 # Storybook build outputs
 .out
 .storybook-out
@@ -114,6 +123,7 @@ logs
 *.log
 
 # Lock files (choose one based on your package manager)
+# Uncomment the one you DON'T use:
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
@@ -123,3 +133,17 @@ logs
 
 # Sentry Config File
 .sentryclirc
+
+# PWA files
+**/public/workbox-*.js
+**/public/sw.js
+**/public/worker-*.js
+**/public/fallback-*.js
+
+# Tauri
+src-tauri/target
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/

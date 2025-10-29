@@ -1,6 +1,8 @@
 import Navbar from "@/home/Navbar";
 import Hero from "@/home/Hero";
 import Features from "@/home/Features";
+import Demo from "@/home/Demo";
+import Contact from "@/home/Contact";
 
 export default function Home() {
   return (
@@ -8,9 +10,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
-      <div>
-        <div className="h-screen"></div>
-      </div>
+      <Demo />
+      <Contact />
     </div>
   );
 }
