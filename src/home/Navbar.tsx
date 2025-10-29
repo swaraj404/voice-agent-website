@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,12 +21,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'Home', href: '/' },
     { label: 'Features', href: '#features' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Integrations', href: '#integrations' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Integrations', href: '/integrations' },
     { label: 'Demos', href: '#demos' },
-    { label: 'Pricing', href: '#pricing' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Contact Us', href: '#contact' },
   ];
 
@@ -58,13 +59,13 @@ const Navbar = () => {
           <div className="hidden md:block flex-1">
             <div className="flex items-center justify-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="text-gray-300 hover:text-white px-3 py-2 text-1xl font-medium transition-colors duration-200 hover:bg-white/5 rounded-lg"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -111,14 +112,14 @@ const Navbar = () => {
             : "bg-black/40 border-t border-white/5"
         )}>
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <div className="pt-4 pb-2 border-t border-white/5 mt-4">
             <button className="w-full text-left text-gray-300 hover:text-white px-3 py-2 text-base font-medium hover:bg-white/5 rounded-lg transition-colors mb-2">
