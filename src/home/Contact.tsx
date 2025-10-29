@@ -33,7 +33,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-32 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/20 to-black"></div>
       
@@ -253,7 +253,7 @@ const Contact = () => {
 
                 {/* Below Form Note */}
                 <p className="text-center text-sm text-gray-400 mt-4">
-                  ✨ We usually reply within 24 hours. Let's make something amazing.
+                  We usually reply within 24 hours. Let's make something amazing.
                 </p>
               </form>
             </div>

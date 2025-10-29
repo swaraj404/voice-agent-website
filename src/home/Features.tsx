@@ -45,7 +45,7 @@ const Features = () => {
   const Icon2 = featureBlocks[2].icon;
 
   return (
-    <section className="relative py-24 overflow-hidden -mt-40 pt-48">
+    <section id="features" className="relative py-24 overflow-hidden -mt-40 pt-48">
       {/* Multi-layered Gradient Background - starts transparent to blend with Hero */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-20% via-purple-950/80 via-50% to-black to-100%"></div>
       

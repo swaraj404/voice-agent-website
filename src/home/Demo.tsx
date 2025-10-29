@@ -32,7 +32,7 @@ const Demo = () => {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="demos" className="relative py-32 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/30 to-black"></div>
       

@@ -20,14 +20,65 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Check if we need to scroll to a section after navigation
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure page is loaded
+      setTimeout(() => {
+        const sectionId = hash.substring(1);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      if (window.location.pathname === '/') {
+        // On home page - scroll to section
+        e.preventDefault();
+        scrollToSection(href.substring(1));
+      } else {
+        // On different page - navigate to home with hash
+        setIsMenuOpen(false);
+        // Let the Link handle navigation with the hash
+      }
+    }
+  };
+
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Features', href: '#features' },
+    { label: 'Features', href: '/#features' },
     { label: 'Industries', href: '/industries' },
     { label: 'Integrations', href: '/integrations' },
-    { label: 'Demos', href: '#demos' },
+    { label: 'Demos', href: '/#demos' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Contact Us', href: '#contact' },
+    { label: 'Contact Us', href: '/#contact' },
   ];
 
   return (
@@ -62,6 +113,7 @@ const Navbar = () => {
                 <Link
                   key={item.label}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-gray-300 hover:text-white px-3 py-2 text-1xl font-medium transition-colors duration-200 hover:bg-white/5 rounded-lg"
                 >
                   {item.label}
@@ -116,7 +168,7 @@ const Navbar = () => {
               key={item.label}
               href={item.href}
               className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium hover:bg-white/5 rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, item.href)}
             >
               {item.label}
             </Link>
