@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Playfair_Display, Raleway, Orbitron, Cinzel } from "next/font/google";
+import { Inter, Space_Grotesk, Playfair_Display, Raleway, Orbitron, Cinzel, Roboto_Mono} from "next/font/google";
 import "./globals.css";
 
 // Primary font for body text
@@ -7,6 +7,13 @@ const inter = Inter({
   subsets: ["latin"],
   variable: '--font-primary',
   display: 'swap',
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 const cinzel = Cinzel({ 
@@ -57,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${playfairDisplay.variable} ${raleway.variable} ${orbitron.variable} ${cinzel.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${playfairDisplay.variable} ${raleway.variable} ${orbitron.variable} ${cinzel.variable} ${robotoMono.variable}`}>
       <body className="antialiased">
         {children}
       </body>

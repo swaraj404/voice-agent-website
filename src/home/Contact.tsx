@@ -8,14 +8,46 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
+    phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwypo_LmgGHGDgFuzTZ-w9yvfWZXNqXq50qvgdn_fp28R5AEIrDgM4Gz3Zn8VWeacWr/exec';
+    
+    try {
+      // Create FormData for better compatibility
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: formDataToSend
+      });
+      
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      alert('✅ Thank you! Your message has been sent. We will contact you soon.');
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('❌ Oops! Something went wrong. Please try again or email us directly at contact@koelai.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -55,37 +87,39 @@ const Contact = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-thin mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-500 bg-clip-text text-transparent"
             style={{ fontFamily: 'var(--font-raleway)' }}
           >
-            Let's Build the Future of Voice AI — Together
+            Let's Make Your Business Smarter with Voice AI - Together
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 font-light max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-xl text-white font-light max-w-4xl mx-auto leading-relaxed">
             Have a project in mind? Whether you're exploring automation, custom AI agents, or full-scale integrations — our team is ready to help you create something extraordinary.
           </p>
         </motion.div>
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
-          {/* Left Column - Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="will-change-transform"
-          >
-            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/10">
-              {/* Intro */}
-              <h3 
-                className="text-2xl md:text-3xl font-bold text-white mb-4"
-                style={{ fontFamily: 'var(--font-raleway)' }}
-              >
-                We'd love to hear from you.
-              </h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Reach out for demos, partnership opportunities, or just to learn how KOEL AI can transform your business communication.
-              </p>
+          {/* Left Column - Contact Info & Demo Card */}
+          <div className="space-y-8">
+            {/* Contact Info Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="will-change-transform"
+            >
+              <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/10">
+                {/* Intro */}
+                <h3 
+                  className="text-2xl md:text-3xl font-bold text-white mb-4"
+                  style={{ fontFamily: 'var(--font-raleway)' }}
+                >
+                  We'd love to hear from you.
+                </h3>
+                <p className="text-gray-300 mb-8 leading-relaxed">
+                  Reach out for demos, partnership opportunities, or just to learn how KOEL AI can transform your business communication.
+                </p>
 
-              {/* Contact Details */}
-              <div className="space-y-6">
+                {/* Contact Details */}
+                <div className="space-y-6">
                 {/* Address */}
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
@@ -154,8 +188,36 @@ const Contact = () => {
                   })}
                 </div>
               </div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Book Demo Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+              className="will-change-transform"
+            >
+              <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-6 border border-white/10">
+                <h3 
+                  className="text-xl md:text-2xl font-bold text-white mb-4"
+                  style={{ fontFamily: 'var(--font-raleway)' }}
+                >
+                  📅 Book a Free Product Demo
+                </h3>
+
+                <a
+                  href="https://calendar.app.google/iAzMj5pHaSAf62H48"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-gradient-to-r from-[#1a0033] to-[#0f0020] text-white px-6 py-3 rounded-full text-sm font-semibold hover:from-[#2d0052] hover:to-[#1a0033] transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-purple-900/40 will-change-transform border border-purple-500/30 text-center"
+                >
+                  Schedule Your Demo Now →
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Right Column - Contact Form */}
           <motion.div
@@ -209,19 +271,20 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Company */}
+                {/* Phone Number */}
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                    Company / Organization <span className="text-gray-500 text-xs">(optional)</span>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                    Phone Number <span className="text-purple-400">*</span>
                   </label>
                   <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                    placeholder="Your Company Name"
+                    placeholder="+91 98765 43210"
                   />
                 </div>
 
@@ -245,10 +308,11 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#1a0033] to-[#0f0020] text-white px-6 py-4 rounded-full text-base font-semibold hover:from-[#2d0052] hover:to-[#1a0033] transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-purple-900/40 will-change-transform border border-purple-500/30 flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-[#1a0033] to-[#0f0020] text-white px-6 py-4 rounded-full text-base font-semibold hover:from-[#2d0052] hover:to-[#1a0033] transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-purple-900/40 will-change-transform border border-purple-500/30 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  <Send className="w-5 h-5" />
-                  Send Message
+                  <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
 
                 {/* Below Form Note */}
@@ -268,8 +332,8 @@ const Contact = () => {
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
           className="text-center mt-20 will-change-transform"
         >
-          <p className="text-xl md:text-2xl text-gray-400 font-light italic">
-            "Empowering human-like conversations — powered by KOEL AI."
+          <p className="text-xl md:text-2xl text-gray-200 font-light italic">
+            "Let's build the voice of your business — powered by KOEL AI."
           </p>
         </motion.div>
       </div>

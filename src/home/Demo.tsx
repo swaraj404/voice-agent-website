@@ -2,30 +2,31 @@
 
 import { motion } from 'framer-motion';
 import { Headphones, Play } from 'lucide-react';
+import { Explora } from 'next/font/google';
 
 const Demo = () => {
   const demoCards = [
     {
-      title: "Smart Patient Engagement",
-      industry: "Healthcare",
-      description: "Listen to how KOEL AI automates appointment booking, reminders, and patient support — with empathy and accuracy.",
-      highlight: "Book, reschedule, or confirm appointments — all through natural voice interaction.",
+      title: "KOEL Al Product Demo English(India)",
+      industry: "Business",
+      description: "Hear our Al voice agent introduce KOEL Al in fluent English - explaining how businesses can autornate conversations, boost productivity and improve customer engagement instantly.",
+      highlight: "Let me show you how KOEL Al can transform your business conversations - just like talking to a real person",
       icon: "",
       gradient: "from-gray-900/30 to-black/40"
     },
     {
-      title: "Intelligent Loan Assistance",
-      industry: "Finance",
-      description: "A real conversation between KOEL AI and a customer applying for a loan — accurate, policy-compliant, and lightning fast.",
-      highlight: "Automating EMI, policy, and eligibility queries — 24×7 without human intervention.",
+      title: "KOEL Al Product Demo English + Hindi(Hinglish)",
+      industry: "Hinglish",
+      description: "Experience KOEL Al's natural Hinglish fluency where the agent blends Hindi and English seamlessly while explaining how KOEL Al automates calls, boosts sales and engages customers 24×7.",
+      highlight: "Sir/Ma'am, KOEL Al aapke business ke calls handle karate hai-smartly, bina rukhe, bilkul human-jaise.",
       icon: "",
       gradient: "from-gray-900/30 to-black/40"
     },
     {
-      title: "AI Admissions Assistant",
-      industry: "Education",
-      description: "Explore how KOEL AI handles student queries, admissions follow-ups, and updates across multiple languages.",
-      highlight: "From inquiries to confirmations — AI that speaks every student's language.",
+      title: "KOEL Al Product Demo Marathi + English",
+      industry: "Marathi",
+      description: "Listen to KOEL Al converse naturally in Marathi mixed with English - describing how it helps businesses save time, connect faster with customers, and schedule product demos effortlessly.",
+      highlight: "KOEL Al tumchya business sathi calls manage karte smart, fast ani natural voice madhe.",
       icon: "",
       gradient: "from-gray-900/30 to-black/40"
     }
@@ -53,10 +54,10 @@ const Demo = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-thin mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-500 bg-clip-text text-transparent"
             style={{ fontFamily: 'var(--font-raleway)' }}
           >
-            Experience KOEL AI in Action
+            Hear Koel AI Speak in Every Language 
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 font-light max-w-4xl mx-auto leading-relaxed">
-            See how our AI Voice Agents transform real business conversations — across industries, in real time.
+            Listen to KOEL AI converse fluently across Indian and global languages with the same human like clarity.
           </p>
         </motion.div>
 
@@ -129,8 +130,8 @@ const Demo = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-12 will-change-transform"
         >
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-             All demos are powered by real AI voice agents — multilingual, low-latency, and customized for every brand.
+          <p className="text-gray-400 text-2xl max-w-3xl mx-auto">
+             All demos are powered by real AI voice agents - multilingual, low-latency, and customized for every brand.
           </p>
         </motion.div>
 
@@ -142,9 +143,8 @@ const Demo = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center will-change-transform"
         >
-          <button className="bg-gradient-to-r from-[#1a0033] to-[#0f0020] text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-[#2d0052] hover:to-[#1a0033] transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-purple-900/40 will-change-transform inline-flex items-center gap-3 border border-purple-500/30">
-            <Headphones className="w-5 h-5" />
-            Try a Live Demo
+          <button className="bg-gradient-to-r from-[#060010] to-[#08000e] text-white px-7 py-2.5 rounded-full text-sm font-medium hover:from-[#390159] hover:to-[#480170] transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25">
+            Explore More Languages
           </button>
         </motion.div>
       </div>
