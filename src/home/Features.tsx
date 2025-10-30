@@ -129,12 +129,12 @@ const Features = () => {
                     </p>
 
                     {/* Learn More Link */}
-                    <button className="mt-4 text-purple-400 text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                    {/* <button className="mt-4 text-purple-400 text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                       Learn More
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </motion.div>

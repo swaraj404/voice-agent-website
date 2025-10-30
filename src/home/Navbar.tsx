@@ -88,33 +88,31 @@ const Navbar = () => {
         ? "bg-black/60 backdrop-blur-xl border-b border-white/10"
         : "bg-transparent border-b border-transparent"
     )}>
-      <div className="w-full px-4 sm:px-6 lg:px-8" style={{ fontFamily: 'var(--font-roboto-mono)' }}>
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16" style={{ fontFamily: 'var(--font-roboto-mono)' }}>
             <div className="flex items-center justify-between h-20">
-            {/* Logo - moved more to the left */}
-            <div className="flex items-center flex-shrink-0 pl-28">
+            {/* Logo - Responsive padding */}
+            <div className="flex items-center flex-shrink-0 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-24 2xl:pl-28">
                 <div className="flex items-center space-x-0">
-                {/* <span className="text-5xl  font-bold bg-gradient-to-r from-[#939393] to-[#530280] bg-clip-text text-transparent">
-                    KOEL AI
-                </span> */}
                 <Image
                   src="/logo1.png"
                   alt="KoelAi Logo"
                   width={300}
                   height={300}
-                  className="rounded-lg"
+                  className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 rounded-lg object-contain"
+                  priority
                 />
                 </div>
             </div>
 
-          {/* Desktop Navigation - centered */}
-          <div className="hidden md:flex flex-1 items-center mt-5">
-            <div className="flex items-center justify-start space-x-8 w-full ml-16">
+          {/* Desktop Navigation - Responsive spacing and hidden on smaller desktops */}
+          <div className="hidden lg:flex flex-1 items-center mt-5">
+            <div className="flex items-center justify-start space-x-2 md:space-x-3 lg:space-x-4 xl:space-x-6 2xl:space-x-8 w-full ml-4 md:ml-8 lg:ml-12 xl:ml-16">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-gray-300 hover:text-white px-3 py-2 text-1xl font-medium transition-colors duration-200 hover:bg-white/5 rounded-lg"
+                  className="text-gray-300 hover:text-white px-2 lg:px-3 py-2 text-sm lg:text-base xl:text-lg font-medium transition-colors duration-200 hover:bg-white/5 rounded-lg whitespace-nowrap"
                 >
                   {item.label}
                 </Link>
@@ -122,18 +120,15 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Buttons - moved more to the right */}
-          <div className="hidden md:flex items-center space-x-6 flex-shrink-0 pr-16 mt-5">
-            <button className="bg-gradient-to-r from-[#060010] to-[#08000e] text-white px-7 py-2.5 rounded-full text-sm font-medium hover:from-[#390159] hover:to-[#480170] transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25">
+          {/* CTA Buttons - Responsive padding and hidden on smaller screens */}
+          <div className="hidden lg:flex items-center space-x-3 xl:space-x-6 flex-shrink-0 pr-4 md:pr-8 lg:pr-12 xl:pr-16 mt-5" style={{ fontFamily: 'var(--font-roboto-mono)' }} >
+            <button className="bg-gradient-to-r from-[#060010] to-[#08000e] text-white px-4 lg:px-6 xl:px-7 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-medium hover:from-[#390159] hover:to-[#480170] transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25 whitespace-nowrap">
               Sign In
             </button>
-            {/* <button className="bg-gradient-to-r from-[#060010] to-[#08000e] text-white px-7 py-2.5 rounded-full text-sm font-medium hover:from-[#390159] hover:to-[#480170] transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25">
-              Get Started 
-            </button> */}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - Show on tablet and mobile */}
+          <div className="lg:hidden pr-4">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 transition-colors"

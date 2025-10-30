@@ -17,7 +17,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwypo_LmgGHGDgFuzTZ-w9yvfWZXNqXq50qvgdn_fp28R5AEIrDgM4Gz3Zn8VWeacWr/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVXpD6bK8M9-h9cUYucI86nCqHnwg-FLN4NQNlDrz4-MxQ9_57gYrAVrymon1puqJS/exec';
     
     try {
       // Create FormData for better compatibility
@@ -87,7 +87,8 @@ const Contact = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-thin mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-500 bg-clip-text text-transparent"
             style={{ fontFamily: 'var(--font-raleway)' }}
           >
-            Let's Make Your Business Smarter with Voice AI - Together
+            Let's Make Your Business Smarter with <br />
+            <span className="text-4xl md:text-5xl lg:text-6xl inline-block mt-2">Voice AI - Together</span>
           </h2>
           <p className="text-xl md:text-xl text-white font-light max-w-4xl mx-auto leading-relaxed">
             Have a project in mind? Whether you're exploring automation, custom AI agents, or full-scale integrations — our team is ready to help you create something extraordinary.
@@ -200,12 +201,12 @@ const Contact = () => {
               className="will-change-transform"
             >
               <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-6 border border-white/10">
-                <h3 
+                {/* <h3 
                   className="text-xl md:text-2xl font-bold text-white mb-4"
                   style={{ fontFamily: 'var(--font-raleway)' }}
                 >
                   📅 Book a Free Product Demo
-                </h3>
+                </h3> */}
 
                 <a
                   href="https://calendar.app.google/iAzMj5pHaSAf62H48"
@@ -213,7 +214,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="inline-block w-full bg-gradient-to-r from-[#1a0033] to-[#0f0020] text-white px-6 py-3 rounded-full text-sm font-semibold hover:from-[#2d0052] hover:to-[#1a0033] transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-purple-900/40 will-change-transform border border-purple-500/30 text-center"
                 >
-                  Schedule Your Demo Now →
+                  Schedule Your Free Demo Now →
                 </a>
               </div>
             </motion.div>
