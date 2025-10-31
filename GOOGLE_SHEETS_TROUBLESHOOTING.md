@@ -11,26 +11,22 @@ function doPost(e) {
   try {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     
-    // Get data from the form - supports both JSON and FormData
+    
     let data;
     
     if (e.postData && e.postData.contents) {
-      // Try parsing as JSON
+     
       try {
         data = JSON.parse(e.postData.contents);
       } catch (jsonError) {
-        // If JSON parsing fails, use parameters
         data = e.parameter;
       }
     } else {
-      // Use parameters directly
       data = e.parameter;
     }
     
-    // Get current timestamp in IST
+
     const timestamp = new Date();
-    
-    // Append data to sheet
     sheet.appendRow([
       Utilities.formatDate(timestamp, "Asia/Kolkata", "yyyy-MM-dd HH:mm:ss"),
       data.name || '',
@@ -39,7 +35,7 @@ function doPost(e) {
       data.message || ''
     ]);
     
-    // Return success response
+    
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: true,
@@ -49,10 +45,10 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
-    // Log error for debugging
+    
     Logger.log('Error: ' + error.toString());
     
-    // Return error response
+   
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: false,
@@ -63,14 +59,14 @@ function doPost(e) {
   }
 }
 
-// Test function - visit the web app URL in browser to test
+
 function doGet(e) {
   return ContentService
     .createTextOutput("✅ Form endpoint is working! Your script is deployed correctly.")
     .setMimeType(ContentService.MimeType.TEXT);
 }
 
-// Manual test function - Run this in Apps Script editor to test
+
 function testManual() {
   const testData = {
     parameter: {
