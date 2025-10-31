@@ -56,7 +56,7 @@ const Hero = () => {
                 {/* <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" /> */}
                 <span className="whitespace-nowrap text-3xl text-purple-200">Call Now To Experience KOEL AI</span>
               </div>
-              <span className="text-5xl sm:text-3xl font-medium text-white">+91 8888888888</span>
+              <span className="text-5xl sm:text-3xl font-medium text-whi">+91 8888888888</span>
             </motion.button>
 
         

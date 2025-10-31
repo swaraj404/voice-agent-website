@@ -54,7 +54,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Voice Agent - Next Gen AI Voice Solutions",
+  title: "KOEL AI - Voice Agent Platform",
   description: "Futuristic voice agent technology for modern businesses",
 };
 
