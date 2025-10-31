@@ -29,13 +29,14 @@ const Footer = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/10 rounded-full blur-[150px]"></div>
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 z-10 flex flex-col min-h-[80vh] justify-between">
-        {/* Large Brand Name - Full Width */}
+        {/* Large Brand Name - Centered over Bird */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center will-change-transform overflow-hidden flex-1 flex items-center justify-center"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center will-change-transform overflow-hidden w-full px-4"
+          style={{ pointerEvents: 'none' }}
         >
           <h2 
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[10rem] font-bold text-white leading-none whitespace-nowrap"

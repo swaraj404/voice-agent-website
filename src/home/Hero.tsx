@@ -48,15 +48,14 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-black to-purple-600 text-white px-6 sm:px-10 md:px-14 py-5 sm:py-6 rounded-full text-base sm:text-lg md:text-xl font-semibold flex flex-col items-center justify-center gap-1 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 w-full sm:w-auto min-w-[220px] sm:min-w-[340px] md:min-w-[420px] lg:min-w-[480px] xl:min-w-[520px] will-change-transform"
+              className="group bg-gradient-to-r from-black to-purple-600 text-white px-6 sm:px-10 md:px-14 py-5 sm:py-6 rounded-full text-base sm:text-lg md:text-xl font-semibold flex flex-col items-center justify-center gap-1 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 w-full sm:w-auto min-w-[220px] sm:min-w-[340px] md:min-w-[420px] lg:min-w-[480px] xl:min-w-[520px] max-w-full will-change-transform"
               style={{ fontFamily: 'var(--font-romono)' }}
               onClick={() => window.open('tel:+918888888888', '_self')}
             >
-              <div className="flex items-center gap-2 sm:gap-3">
-                {/* <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" /> */}
-                <span className="whitespace-nowrap text-xl sm:text-2xl md:text-3xl lg:text-3xl text-purple-200">Call Now To Experience KOEL AI</span>
+              <div className="flex items-center gap-2 sm:gap-3 w-full justify-center">
+                <span className="whitespace-normal break-words text-base sm:text-lg md:text-xl lg:text-2xl text-purple-200 text-center leading-tight">Call Now To Experience KOEL AI</span>
               </div>
-              <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-white">+91 8888888888</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-medium text-white">+91 8888888888</span>
             </motion.button>
 
         
