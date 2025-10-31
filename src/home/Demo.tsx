@@ -32,7 +32,7 @@ const Demo = () => {
       title: "Listen KOEL AI In",
       subtitle: "Marathi + English",
       industry: "Marathi",
-      description: "Listen to KOEL Al converse naturally in Marathi mixed with English - describing how it helps businesses save time, connect faster with customers, and schedule product demos effortlessly.",
+      description: "Listen to KOEL Al converse naturally in Marathi mixed with English - describing how it helps businesses save time, connect faster with customers and schedule product demos effortlessly.",
       highlight: "KOEL Al tumchya business sathi calls manage karte smart, fast ani natural voice madhe.",
       audioUrl: "/audio/Marathi_India.mp3",
       gradient: "from-gray-900/30 to-black/40"

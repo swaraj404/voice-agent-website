@@ -9,8 +9,15 @@ export default function Pricing() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
             Pricing
           </h1>
-          <p className="text-xl text-gray-300">
-            Pricing plans coming soon...
+          <p className="text-xl text-white font-bold">
+            Email us at{" "}
+            <a
+              href="mailto:contact@koelai.com"
+              className="underline hover:text-white transition-colors mx-2 text-2xl"
+            >
+              contact@koelai.com
+            </a>{" "}
+            to explore our pricing options.
           </p>
         </div>
       </main>

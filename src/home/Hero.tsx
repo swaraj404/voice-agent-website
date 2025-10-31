@@ -48,15 +48,15 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-black to-purple-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full text-sm sm:text-base font-semibold flex flex-col items-center justify-center gap-1 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 w-full sm:w-auto sm:min-w-[260px] md:min-w-[280px] will-change-transform"
+              className="group bg-gradient-to-r from-black to-purple-600 text-white px-8 sm:px-14 md:px-14 py-6 sm:py-6 rounded-full text-sm sm:text-base font-semibold flex flex-col items-center justify-center gap-1 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 w-full sm:w-auto sm:min-w-[460px] md:min-w-[520px] will-change-transform"
               style={{ fontFamily: 'var(--font-romono)' }}
               onClick={() => window.open('tel:+918888888888', '_self')}
             >
               <div className="flex items-center gap-2 sm:gap-3">
-                <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                <span className="whitespace-nowrap">Call Now To Experience KOEL AI</span>
+                {/* <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" /> */}
+                <span className="whitespace-nowrap text-3xl text-purple-200">Call Now To Experience KOEL AI</span>
               </div>
-              <span className="text-3xl sm:text-sm font-medium text-purple-200">+91 8888888888</span>
+              <span className="text-5xl sm:text-3xl font-medium text-white">+91 8888888888</span>
             </motion.button>
 
         

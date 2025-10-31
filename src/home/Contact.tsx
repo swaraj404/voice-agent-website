@@ -69,6 +69,7 @@ const Contact = () => {
     { name: 'GitHub', icon: Github, url: '#' }
   ];
 
+  const newLocal = "Tell us what you're looking for.....";
   return (
     <section id="contact" className="relative py-32 overflow-hidden">
       {/* Background Gradient */}
@@ -96,7 +97,7 @@ const Contact = () => {
             <span className="text-4xl md:text-5xl lg:text-6xl inline-block mt-2">Voice AI - Together</span>
           </h2>
           <p className="text-xl md:text-xl text-white font-light max-w-4xl mx-auto leading-relaxed">
-            Have a project in mind? Whether you're exploring automation, custom AI agents, or full-scale integrations — our team is ready to help you create something extraordinary.
+            Have a project in mind? Whether you're exploring automation, custom AI agents or full-scale integrations — our team is ready to help you create something extraordinary.
           </p>
         </motion.div>
 
@@ -121,7 +122,7 @@ const Contact = () => {
                   We'd love to hear from you.
                 </h3>
                 <p className="text-gray-300 mb-8 leading-relaxed">
-                  Reach out for demos, partnership opportunities, or just to learn how KOEL AI can transform your business communication.
+                  Reach out for demos, partnership opportunitie or just to learn how KOEL AI can transform your business communication.
                 </p>
 
                 {/* Contact Details */}
@@ -307,7 +308,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-                    placeholder="Tell us what you're looking for (demo, integration, partnership...)"
+                    placeholder={newLocal}
                   />
                 </div>
 
@@ -342,7 +343,7 @@ const Contact = () => {
           <div className="w-74 md:w-300 h-[1px] bg-white/40 mx-auto mb-6"></div>
           
           <p className="text-xl md:text-2xl text-gray-200 font-light italic">
-            "Let's build the voice of your business — powered by KOEL AI."
+            " Let's build the voice of your business — powered by KOEL AI "
           </p>
           
           {/* Bottom decorative line */}

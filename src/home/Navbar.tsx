@@ -64,8 +64,8 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Features', href: '/#features' },
-    { label: 'Industries', href: '/industries' },
-    { label: 'Integrations', href: '/integrations' },
+    { label: 'Industries', href: '/#industries' },
+    { label: 'Integrations', href: '/#integrations' },
     { label: 'Demos', href: '/#demos' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Contact Us', href: '/#contact' },

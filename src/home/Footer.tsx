@@ -8,12 +8,12 @@ const Footer = () => {
       {/* Background Image - Bird (smaller, centered, rotated) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
         <div
-          className="bg-cover bg-center bg-no-repeat opacity-100"
+          className="bg-cover bg-center bg-no-repeat opacity-200"
           style={{
-            width: '95%',
-            maxWidth: '1400px',
+            width: '90%',
+            maxWidth: '1300px',
             aspectRatio: '2/1',
-            backgroundImage: "url('/footer-bird.png')",
+            backgroundImage: "url('/bgBird.png')",
             transform: "rotate(8deg)",
           }}
         ></div>
@@ -38,7 +38,7 @@ const Footer = () => {
           className="text-center will-change-transform overflow-hidden"
         >
           <h2 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white leading-none whitespace-nowrap"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] 2xl:text-[10rem] font-bold text-white leading-none whitespace-nowrap"
             style={{ 
               fontFamily: 'var(--font-cinzel)',
               letterSpacing: '0.2em',
