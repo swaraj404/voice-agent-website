@@ -20,28 +20,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Check if we need to scroll to a section after navigation
-    const hash = window.location.hash;
-    if (hash) {
-      // Small delay to ensure page is loaded
-      setTimeout(() => {
-        const sectionId = hash.substring(1);
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
-      }, 100);
-    }
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -57,8 +35,20 @@ const Navbar = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    setIsMenuOpen(false);
+  };
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
+    if (href === '/') {
+      // Home button - scroll to top
+      e.preventDefault();
+      scrollToTop();
+    } else if (href.startsWith('#')) {
       if (window.location.pathname === '/') {
         // On home page - scroll to section
         e.preventDefault();
@@ -92,7 +82,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-20">
             {/* Logo - Responsive padding */}
             <div className="flex items-center flex-shrink-0 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-24 2xl:pl-28">
-                <div className="flex items-center space-x-0">
+                <button onClick={scrollToTop} className="flex items-center space-x-0 cursor-pointer">
                 <Image
                   src="/logo1.png"
                   alt="KoelAi Logo"
@@ -101,7 +91,7 @@ const Navbar = () => {
                   className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64 rounded-lg object-contain"
                   priority
                 />
-                </div>
+                </button>
             </div>
 
           {/* Desktop Navigation - Responsive spacing and hidden on smaller desktops */}

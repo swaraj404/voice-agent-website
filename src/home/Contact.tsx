@@ -17,11 +17,11 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVXpD6bK8M9-h9cUYucI86nCqHnwg-FLN4NQNlDrz4-MxQ9_57gYrAVrymon1puqJS/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwaZqvU6doraQ75cGRVph8dWFCb0KuIh9DSkZPsdKXgW8PJ5Y4cjJ8Zr-g0v6L0HLO3/exec';
     
     try {
-      // Create FormData for better compatibility
-      const formDataToSend = new FormData();
+      // Use URLSearchParams instead of FormData for better CORS compatibility
+      const formDataToSend = new URLSearchParams();
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
@@ -29,9 +29,14 @@ const Contact = () => {
       
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: formDataToSend
+        mode: 'no-cors', // Important: Allows cross-origin requests
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formDataToSend.toString()
       });
       
+      // Note: With no-cors mode, we can't read the response, so we assume success
       // Clear form
       setFormData({
         name: '',
@@ -200,7 +205,7 @@ const Contact = () => {
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
               className="will-change-transform"
             >
-              <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-6 border border-white/10">
+              <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-3xl p-10.5 border border-white/10">
                 {/* <h3 
                   className="text-xl md:text-2xl font-bold text-white mb-4"
                   style={{ fontFamily: 'var(--font-raleway)' }}
@@ -333,9 +338,15 @@ const Contact = () => {
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
           className="text-center mt-20 will-change-transform"
         >
+          {/* Top decorative line */}
+          <div className="w-74 md:w-300 h-[1px] bg-white/40 mx-auto mb-6"></div>
+          
           <p className="text-xl md:text-2xl text-gray-200 font-light italic">
             "Let's build the voice of your business — powered by KOEL AI."
           </p>
+          
+          {/* Bottom decorative line */}
+          <div className="w-74 md:w-300 h-[1px] bg-white/40 mx-auto mt-6"></div>
         </motion.div>
       </div>
     </section>

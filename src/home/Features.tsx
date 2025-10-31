@@ -58,14 +58,13 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="relative py-24 overflow-hidden -mt-40 pt-48">
-      {/* Multi-layered Gradient Background - starts transparent to blend with Hero */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-20% via-purple-950/80 via-50% to-black to-100%"></div>
+    <section id="features" className="relative py-24 overflow-hidden bg-black">
+      {/* Pure black background blending with Hero section */}
+      <div className="absolute inset-0 bg-black"></div>
       
-      {/* Radial gradient overlays for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-transparent via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
+      {/* Subtle radial gradient overlays for depth - very minimal */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/5 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-900/5 via-transparent to-transparent"></div>
       
       {/* Animated gradient orbs for dynamic feel */}
       <div className="absolute top-[15%] left-0 w-[500px] h-[500px] bg-purple-900/30 rounded-full blur-[120px]"></div>

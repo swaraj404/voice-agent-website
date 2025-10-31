@@ -138,7 +138,7 @@ const Demo = () => {
           >
             Hear Koel AI Speak in Every Language 
           </h2>
-          <p className="text-xl md:text-2xl text-gray-400 font-light max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white font-light max-w-4xl mx-auto leading-relaxed">
             Listen to KOEL AI converse fluently across Indian and global languages with the same human like clarity.
           </p>
         </motion.div>
@@ -231,8 +231,8 @@ const Demo = () => {
                       
                       {/* Button Content - Hidden when playing */}
                       <div className={`relative z-10 flex items-center gap-2 transition-opacity duration-300 ${playingIndex === index ? 'opacity-0' : 'opacity-100'}`}>
-                        <Headphones className="w-4 h-4" />
-                        Listen Demo
+                        {/* <Headphones className="w-4 h-4" /> */}
+                        {demo.subtitle}
                       </div>
                     </button>
                     
@@ -274,7 +274,7 @@ const Demo = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-12 will-change-transform"
         >
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl max-w-full mx-auto px-4 whitespace-nowrap overflow-x-auto">All demos are powered by real AI voice agents - multilingual, low-latency, and customized for every brand.</p>
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl max-w-full mx-auto px-4 whitespace-nowrap overflow-x-auto">All demos are powered by real AI voice agents - multilingual, low-latency and customized for every brand.</p>
         </motion.div>
 
         {/* CTA Button */}
