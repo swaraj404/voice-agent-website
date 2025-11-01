@@ -49,28 +49,28 @@ const Footer = () => {
             KOEL AI
           </h2>
         </motion.div>
-        {/* Footer links/info at the bottom, always visible */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          className="text-center space-y-4 will-change-transform max-w-[1400px] mx-auto pb-8"
-        >
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-            <span className="text-gray-600">|</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy Notice</a>
-            <span className="text-gray-600">|</span>
-            <a href="#" className="hover:text-white transition-colors">Cookie Notice</a>
-            <span className="text-gray-600">|</span>
-            <a href="#" className="hover:text-white transition-colors">Trust Center</a>
-          </div>
-          <p className="text-sm text-gray-500">
-            ©KOEL AI {new Date().getFullYear()}
-          </p>
-        </motion.div>
       </div>
+      {/* Footer links/info absolutely at the bottom of the footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        className="absolute left-0 right-0 bottom-8 text-center space-y-4 will-change-transform max-w-[1400px] mx-auto pb-16"
+      >
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
+          <span className="text-gray-600">|</span>
+          <a href="#" className="hover:text-white transition-colors">Privacy Notice</a>
+          <span className="text-gray-600">|</span>
+          <a href="#" className="hover:text-white transition-colors">Cookie Notice</a>
+          <span className="text-gray-600">|</span>
+          <a href="#" className="hover:text-white transition-colors">Trust Center</a>
+        </div>
+        <p className="text-sm text-gray-500">
+          ©KOEL AI {new Date().getFullYear()}
+        </p>
+      </motion.div>
     </footer>
   );
 };
